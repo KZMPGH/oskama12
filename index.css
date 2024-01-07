@@ -1,11 +1,14 @@
 #home{
-    background-color: #555;
+    /* background-color: #333; */
+    text-decoration: underline #FDC11F;
+    text-decoration-thickness: 0.2em;
+    color: #FDC11F;
 }
 
 .header00{
-    color: white;
+    color: #FDC11F;
     text-align: center;
-    background-color: #333;
+    background-color: #222222;
 }
 
 .header00 h1{
@@ -20,15 +23,37 @@
     padding-bottom: 0.8em;
 }
 
-article{
-    display: flex;
+.s1{
+    background-color: #434242;
     justify-content: center;
+    display: flex;
 }
 
-section{
-    padding: 0.4em;
-    background-color: #ffffff;
-    border: #d4d4d4 0.01em solid;
+.isi01{
+    color: white;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center;
     max-width: 900px;
     width: 100%;
+}
+
+.i01{
+    margin-left: 0.5em;
+}
+
+.i02 img{
+    width: 13em;
+}
+
+.s2{
+    background-color: #F3EFE0;
+    justify-content: center;
+    display: flex;
+}
+
+.isi02{
+    display: block;
+    max-width: 900px;
+    width: 100%;   
 }

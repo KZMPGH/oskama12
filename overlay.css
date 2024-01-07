@@ -3,6 +3,10 @@ body{
     margin: 0em;
 }
 
+.paragraf{
+    text-indent: 1.3em;
+}
+
 a{
     text-decoration: none;
     color: inherit;
@@ -14,8 +18,8 @@ header{
 }
 
 .a01{
-    border-top: 0.001em solid  #555;
-    background-color: #333;
+    border-top: 0.001em solid  #333;
+    background-color: #222222;
     color: white;
 }
 
@@ -30,19 +34,22 @@ header{
 }
 
 .l01{
-    border-left: #55555571 0.11em solid ;
+    border-left: #333 0.11em solid ;
+}
+
+.l01 :hover{
+    color: #FDC11F;
 }
 
 .a03{
-    border-right: #55555571 0.11em solid ;
+    border-right: #333 0.11em solid ;
 }
 
 
 /*  */
 
 footer{
-    color: white;
-    background-color: #333;
+    background-color: #222222;
     display: flex;
     justify-content: center;
 }
@@ -69,7 +76,7 @@ footer{
 }
 
 .f03{
-    border-bottom: 0.1em solid #555;
+    border-bottom: 0.1em solid #333;
 }
 
 .bf01{
