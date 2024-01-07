@@ -34,7 +34,7 @@
     justify-content: space-between;
     display: inline-flex;
     align-items: center;
-    max-width: 900px;
+    max-width: 800px;
     width: 100%;
 }
 
@@ -54,6 +54,6 @@
 
 .isi02{
     display: block;
-    max-width: 900px;
+    max-width: 800px;
     width: 100%;   
 }
