@@ -1,0 +1,34 @@
+#home{
+    background-color: #555;
+}
+
+.header00{
+    color: white;
+    text-align: center;
+    background-color: #333;
+}
+
+.header00 h1{
+    letter-spacing: 0.2em;
+    margin: 0em;
+    padding-top: 0.4em;
+    padding-bottom: 0.1em;
+}
+
+.header00 h4{
+    margin: 0em;
+    padding-bottom: 0.8em;
+}
+
+article{
+    display: flex;
+    justify-content: center;
+}
+
+section{
+    padding: 0.4em;
+    background-color: #ffffff;
+    border: #d4d4d4 0.01em solid;
+    max-width: 900px;
+    width: 100%;
+}
