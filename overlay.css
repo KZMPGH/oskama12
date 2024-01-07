@@ -53,8 +53,8 @@ footer{
 }
 
 .f02{
+    display: inline-block;
     color: #7979797c;
-    border-bottom: 0.1em solid #555;
     padding: 1em;
 }
 
@@ -68,12 +68,17 @@ footer{
     margin: 0em;
 }
 
+.f03{
+    border-bottom: 0.1em solid #555;
+}
+
 .bf01{
     display: flex;
     color: #7979797c;
     align-items: center;
     justify-content: center;
     margin: 0.7em;
+    margin-bottom: 2em;
 }
 
 .bf01 h3, .bf01 h5{
