@@ -112,6 +112,12 @@
     justify-content: right;
 }
 
+.s4{
+    background-color: #F3EFE0;
+    justify-content: center;
+    display: flex;
+}
+
 @media only screen and (max-width: 800px) {
 
 .i02 img{
