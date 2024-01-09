@@ -1,4 +1,4 @@
-#home{
+#beranda{
     /* background-color: #333; */
     text-decoration: underline #FDC11F;
     text-decoration-thickness: 0.2em;
@@ -36,18 +36,19 @@
     align-items: center;
     max-width: 800px;
     width: 100%;
-    background-image: linear-gradient(rgba(67, 66, 66, 0.9), rgba(67, 66, 66, 0.9)), url("image/index/fotbar01.jpg");
+    background-image: linear-gradient(rgba(67, 66, 66, 0.94), rgba(67, 66, 66, 0.94)), url("image/index/fotbar01.jpg");
     background-position: center;
     background-size: cover;
 }
 
 .i01{
-    margin-left: 5em;
+    margin-left: 4em;
 }
 
 .i02 img{
-    margin: 1em;
-    width: 220px;
+    margin: 1.5em;
+    width: 25vw;
+    max-width: 220px;
 }
 
 .i03 {
@@ -135,9 +136,9 @@
 
 @media only screen and (max-width: 800px) {
 
-.i02 img{
+/* .i02 img{
     padding-right: 2em;
     width: 28vw;
     max-width: 220px;
-}
+} */
 }

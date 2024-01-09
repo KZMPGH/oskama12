@@ -1,0 +1,24 @@
+#acara{
+    /* background-color: #333; */
+    text-decoration: underline #FDC11F;
+    text-decoration-thickness: 0.2em;
+    color: #FDC11F;
+}
+
+.header00{
+    color: #FDC11F;
+    text-align: center;
+    background-color: #222222;
+}
+
+.header00 h1{
+    letter-spacing: 0.2em;
+    margin: 0em;
+    padding-top: 0.4em;
+    padding-bottom: 0.1em;
+}
+
+.header00 h4{
+    margin: 0em;
+    padding-bottom: 0.8em;
+}
