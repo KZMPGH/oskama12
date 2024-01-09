@@ -24,7 +24,7 @@
 }
 
 .s1{
-    background-color: #434242;
+    background-color: rgb(67, 66, 66);
     justify-content: center;
     display: flex;
 }
@@ -36,14 +36,29 @@
     align-items: center;
     max-width: 800px;
     width: 100%;
+    background-image: linear-gradient(rgba(67, 66, 66, 0.9), rgba(67, 66, 66, 0.9)),
+                  url("image/index/fotbar01.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .i01{
-    margin-left: 0.5em;
+    padding: 3em;
 }
 
 .i02 img{
-    width: 20vmin;
+    padding-right: 2em;
+    width: 220px;
+}
+
+.i03 {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    color: #FDC11F;
+}
+
+.i04{
+    margin-bottom: 0.2em;
 }
 
 .s2{
@@ -56,4 +71,13 @@
     display: block;
     max-width: 800px;
     width: 100%;   
+}
+
+@media only screen and (max-width: 800px) {
+
+.i02 img{
+    padding-right: 2em;
+    width: 28vw;
+    max-width: 220px;
+}
 }
