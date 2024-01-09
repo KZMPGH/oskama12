@@ -109,11 +109,26 @@
 }
 
 #laa01kanan{
+    color: white;
+    justify-content: right;
+    border: 0.1em solid #222222;
+    background-color: #222;
+    border-radius: 1em;
+}
+
+#laa01kanan02{
     justify-content: right;
 }
 
-.s4{
+#laa01kiri{
+    color: black;
     background-color: #F3EFE0;
+    border-radius: 1em;
+}
+
+.s4{
+    /* background-color: #F3EFE0; */
+    /* color: white; */
     justify-content: center;
     display: flex;
 }
