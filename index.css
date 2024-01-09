@@ -24,7 +24,7 @@
 }
 
 .s1{
-    background-color: rgb(67, 66, 66);
+    background-color: #434242;
     justify-content: center;
     display: flex;
 }
@@ -67,10 +67,48 @@
     display: flex;
 }
 
-.isi02{
+.isi02{ 
+    margin: 1em;
     display: block;
     max-width: 800px;
     width: 100%;   
+}
+
+/* la = list anggota */
+.s3{
+    background-color: #434242;
+    color: white;
+    justify-content: center;
+    display: flex;
+}
+
+.la01{ 
+    margin: 1em;
+    max-width: 800px;
+    width: 100%;   
+}
+
+.la01 h2{
+    text-align: center;
+}
+
+.laa01{
+    display: flex;
+    align-items: center;
+}
+
+.laa01 div img{
+    max-width: 120px;
+    width: 8em;
+    border-radius: 0.7em;
+}
+
+.laa01 span h4{
+    margin: 0.5em;
+}
+
+#laa01kanan{
+    justify-content: right;
 }
 
 @media only screen and (max-width: 800px) {
