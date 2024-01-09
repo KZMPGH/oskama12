@@ -36,18 +36,17 @@
     align-items: center;
     max-width: 800px;
     width: 100%;
-    background-image: linear-gradient(rgba(67, 66, 66, 0.9), rgba(67, 66, 66, 0.9)),
-                  url("image/index/fotbar01.jpg");
+    background-image: linear-gradient(rgba(67, 66, 66, 0.9), rgba(67, 66, 66, 0.9)), url("image/index/fotbar01.jpg");
     background-position: center;
     background-size: cover;
 }
 
 .i01{
-    padding: 3em;
+    margin-left: 5em;
 }
 
 .i02 img{
-    padding-right: 2em;
+    margin: 1em;
     width: 220px;
 }
 
@@ -93,6 +92,7 @@
 }
 
 .laa01{
+    margin-bottom: 1em;
     display: flex;
     align-items: center;
 }
@@ -103,7 +103,7 @@
     border-radius: 0.7em;
 }
 
-.laa01 span h4{
+.laa01 span h5{
     margin: 0.5em;
 }
 
