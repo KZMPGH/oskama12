@@ -1,0 +1,47 @@
+#acara{
+    /* background-color: #333; */
+    text-decoration: underline #FDC11F;
+    text-decoration-thickness: 0.2em;
+    color: #FDC11F;
+}
+
+.header00{
+    color: #FDC11F;
+    text-align: center;
+    background-color: #222222;
+}
+
+.header00 h1{
+    letter-spacing: 0.2em;
+    margin: 0em;
+    padding-top: 0.4em;
+    padding-bottom: 0.1em;
+}
+
+.header00 h4{
+    margin: 0em;
+    padding-bottom: 0.8em;
+}
+
+.s1{
+    background-color: #434242;
+    justify-content: center;
+    display: flex;
+    padding: 2em;
+}
+
+.isi01{
+    color: white;
+    justify-content: space-between;
+    display: inline-flex;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    /* background-image: linear-gradient(rgba(67, 66, 66, 0.92), rgba(67, 66, 66, 0.92)), url("../image/index/fotbar01.jpg");
+    background-position: center;
+    background-size: cover; */
+    
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+}

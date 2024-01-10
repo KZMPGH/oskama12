@@ -27,6 +27,7 @@
     background-color: #434242;
     justify-content: center;
     display: flex;
+    padding: 2em;
 }
 
 .isi01{
@@ -39,7 +40,7 @@
     /* background-image: linear-gradient(rgba(67, 66, 66, 0.92), rgba(67, 66, 66, 0.92)), url("../image/index/fotbar01.jpg");
     background-position: center;
     background-size: cover; */
-
+    
     display: grid;
     grid-template-rows: repeat(auto-fit, 1fr);
     grid-template-columns: repeat(3, 1fr);
@@ -64,11 +65,13 @@
 }
 
 .i01 span h5 {
+    text-align: center;
     margin: 0em;
     padding: 0.2em;
 }
 
 .i01 span p{
+    color: #434242c2;
     font-size: 0.7em;
     display: flex;
     justify-content: right;
