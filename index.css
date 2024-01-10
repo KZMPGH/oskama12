@@ -36,7 +36,7 @@
     align-items: center;
     max-width: 800px;
     width: 100%;
-    background-image: linear-gradient(rgba(67, 66, 66, 0.94), rgba(67, 66, 66, 0.94)), url("image/index/fotbar01.jpg");
+    background-image: linear-gradient(rgba(67, 66, 66, 0.92), rgba(67, 66, 66, 0.92)), url("image/index/fotbar01.jpg");
     background-position: center;
     background-size: cover;
 }
