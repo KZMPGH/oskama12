@@ -32,16 +32,11 @@
 
 .isi01{
     color: white;
-    justify-content: space-between;
-    display: inline-flex;
     align-items: center;
     max-width: 800px;
     width: 100%;
-    /* background-image: linear-gradient(rgba(67, 66, 66, 0.92), rgba(67, 66, 66, 0.92)), url("../image/index/fotbar01.jpg");
-    background-position: center;
-    background-size: cover; */
-    
-    display: grid;
-    grid-template-rows: repeat(auto-fit, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+}
+
+.i01{
+    text-align: center;
 }
