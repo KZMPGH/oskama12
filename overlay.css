@@ -29,16 +29,19 @@ header{
 }
 
 .l01 h4{
-    margin: 0.4em;
-    letter-spacing:0.11em;
+    margin: 0em;
+    padding: 0.4em;
+    letter-spacing: 0.04em;
 }
 
 .l01{
     border-left: #333 0.11em solid ;
 }
 
-.l01 :hover{
+.l01 h4:hover{
     color: #FDC11F;
+    translate: 0em 0.2em;
+    transition: 0.16s ease-in-out, color 0.7s;
 }
 
 .a03{

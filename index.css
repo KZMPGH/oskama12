@@ -126,6 +126,18 @@
     border-radius: 1em;
 }
 
+#laa01kiri img:hover, #laa01kiri02 img:hover{
+    scale: 1.2;
+    translate: 1em 0em 1em;
+    transition: 0.5s ease-in-out;
+}
+
+#laa01kanan img:hover, #laa01kanan02 img:hover{
+    scale: 1.2;
+    translate: -1em 0em -1em;
+    transition: 0.5s ease-in-out;
+}
+
 .s4{
     background-color: #F3EFE0;
     /* color: white; */
