@@ -57,3 +57,16 @@
     margin-left: 0.4em;
     border: 0.7em solid #fff;
 }
+
+.hari-2{
+    justify-content: right;
+    color: white;
+    display: flex;
+}
+
+.hari-2 > div > img{
+    width: 17em;
+    margin: 1em;
+    margin-left: 0.4em;
+    border: 0.7em solid #fff;
+}
