@@ -27,7 +27,6 @@
     background-color: #434242;
     justify-content: center;
     display: flex;
-    padding: 2em;
 }
 
 .isi01{
@@ -45,6 +44,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.4em;
+    padding: 1em;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 #gallery img{
@@ -54,5 +56,5 @@
 }
 
 #gallery img:hover{
-    scale: 1.25;
+    scale: 1.3;
 }

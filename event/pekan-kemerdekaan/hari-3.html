@@ -9,7 +9,7 @@
     <title>OSKAMA 12 - Pekan Kemerdekaan</title>
     <link rel="icon" href="../../image/Logo OSKAMA putih.png">
     <link rel="stylesheet" href="../../overlay.css">
-    <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/index.css">
+    <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/hari-1.css">
 </head>
 <body>
 
@@ -49,46 +49,10 @@
         <div class="isi01">
             <div class="i01">
                 <h1>PEKAN KEMERDEKAAN</h1>
+                <h3>HARI KE-3</h3>
             </div>
-        </div>
-    </div>
-    <div class="s2">
-        <div class="isi01">
-            <a href="hari-1" class="hari-1">
-                <div>
-                    <img src="../../image/acara/pekan kemerdekaan/hari-1.jpg" alt="">
-                </div>
-                <span>
-                    <h3>HARI KE-1</h3>
-                    <p>Deskripsi ( Coming Soon )</p>
-                </span>
-            </a>
-        </div>
-    </div>
-    <div class="s1">
-        <div class="isi01">
-            <a href="hari-2" class="hari-2">
-                <span>
-                    <h3>HARI KE-2</h3>
-                    <p>Deskripsi ( Coming Soon )</p>
-                </span>
-                <div>
-                    <img src="../../image/acara/pekan kemerdekaan/hari-2.jpg" alt="">
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="s2">
-        <div class="isi01">
-            <a href="hari-3" class="hari-1">
-                <div>
-                    <img src="../../image/acara/pekan kemerdekaan/hari-3.jpg" alt="">
-                </div>
-                <span>
-                    <h3>HARI KE-3</h3>
-                    <p>Deskripsi ( Coming Soon )</p>
-                </span>
-            </a>
+            <div id="gallery">
+            </div>
         </div>
     </div>
 </section>
@@ -111,6 +75,30 @@
         </div>
     </footer>
 <!-- FOOTER -->
+
+
+<script>
+    // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
+    var images = [];
+
+    for (var i = 1; i <= 173; i++) {
+        images.push("image (" + i + ").JPG");
+    }
+
+    // Fungsi untuk menampilkan gambar
+    function displayImages() {
+        var container = document.getElementById("gallery");
+    
+        for(var i = 0; i < images.length; i++) {
+            var img = document.createElement("img");
+            img.src = "../../image/acara/pekan kemerdekaan/hari-3/" + images[i]; // Ganti dengan path folder gambar Anda
+            container.appendChild(img);
+        }
+    }
+    
+    // Panggil fungsi saat halaman dimuat
+    window.onload = displayImages;
+</script>
 
 </body>
 </html>
