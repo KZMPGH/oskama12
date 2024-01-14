@@ -126,13 +126,13 @@
     border-radius: 1em;
 }
 
-#laa01kiri img:hover, #laa01kiri02 img:hover{
+#laa01kiri > div > img:hover, #laa01kiri02 > div > img:hover{
     scale: 1.2;
     translate: 1em 0em 1em;
     transition: 0.5s ease-in-out;
 }
 
-#laa01kanan img:hover, #laa01kanan02 img:hover{
+#laa01kanan > div > img:hover, #laa01kanan02 > div > img:hover{
     scale: 1.2;
     translate: -1em 0em -1em;
     transition: 0.5s ease-in-out;
@@ -144,6 +144,27 @@
     justify-content: center;
     display: flex;
 }
+
+.laa01 > span > .ig{
+    align-items: center;
+    display: flex;
+    margin-left: 0.78em;
+    height: 1.7em;
+}
+
+.laa01 > span > .ig > h5{
+padding: 0em;
+    margin-left: 0.4em;
+}
+
+.laa01 > span > .ig img{
+    height: 1.7em;
+}
+
+#laa01kanan > span > .ig img{
+    filter: invert(100%);
+}
+
 
 @media only screen and (max-width: 800px) {
 

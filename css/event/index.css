@@ -27,48 +27,52 @@
     background-color: #434242;
     justify-content: center;
     display: flex;
-    padding: 2em;
+    padding: 0.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .isi01{
     color: white;
-    justify-content: space-between;
-    display: inline-flex;
-    align-items: center;
     max-width: 800px;
     width: 100%;
     display: grid;
-    grid-template-rows: repeat(auto-fit, 1fr);
     grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
 }
 
-.i01{
-    align-items: center;
-    padding: 0.5em;
+.grid-item {
+    color: #222222;
+	background-color: #f1f1f1;
     margin: 0.5em;
-    border-radius: 0.8em;
-    color: black;
-    background-color: #F3EFE0;
+	border: 0.1em solid #ccc;
+    border-radius: 0.4em;
 }
 
-.i01 img{
-    width: 9em;
+.grid-item img {
+	max-width: 100%;
+    padding-top: 0.5em;
+    padding-bottom: 0.3em;
 }
 
-.i02{
+.grid-item h4{
+    margin: 0.5em;
+    margin-bottom: 0.1em;
+    font-size: 90%;
+}
+
+.grid-item > .date{
     display: flex;
-    justify-content: center;
-}
-
-.i01 span h5 {
-    text-align: center;
+    padding: 0em;
     margin: 0em;
-    padding: 0.2em;
+    margin-left: 0.7em;
+    font-size: 70%;
 }
 
-.i01 span p{
-    color: #434242c2;
-    font-size: 0.7em;
-    display: flex;
-    justify-content: right;
+@media only screen and (max-width: 600px) {
+
+    .isi01{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
