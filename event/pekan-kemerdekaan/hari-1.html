@@ -52,7 +52,6 @@
                 <h3>HARI KE-1</h3>
             </div>
             <div id="gallery">
-                <img src="hari-1/image (1).JPG" alt="">
             </div>
         </div>
     </div>
@@ -83,7 +82,7 @@
     var images = [];
 
     for (var i = 1; i <= 209; i++) {
-        images.push("image (" + i + ").jpg");
+        images.push("image (" + i + ").JPG");
     }
 
     // Fungsi untuk menampilkan gambar
@@ -92,7 +91,7 @@
     
         for(var i = 0; i < images.length; i++) {
             var img = document.createElement("img");
-            img.src = "hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
+            img.src = "../../../../../../image/acara/pekan kemerdekaan/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
             container.appendChild(img);
         }
     }
