@@ -27,7 +27,6 @@
     background-color: #434242;
     justify-content: center;
     display: flex;
-    padding: 2em;
 }
 
 .isi01{
@@ -41,3 +40,20 @@
     text-align: center;
 }
 
+.s2{
+    background-color: #F3EFE0;
+    justify-content: center;
+    display: flex;
+}
+
+.hari-1{
+    display: flex;
+    color: black;
+}
+
+.hari-1 > div > img{
+    width: 17em;
+    margin: 1em;
+    margin-left: 0.4em;
+    border: 0.7em solid #fff;
+}
