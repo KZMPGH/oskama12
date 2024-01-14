@@ -102,6 +102,7 @@
     max-width: 120px;
     width: 8em;
     border-radius: 0.7em;
+    transition: 0.3s ease-in-out;
 }
 
 .laa01 span h5{
@@ -129,13 +130,11 @@
 #laa01kiri > div > img:hover, #laa01kiri02 > div > img:hover{
     scale: 1.2;
     translate: 1em 0em 1em;
-    transition: 0.5s ease-in-out;
 }
 
 #laa01kanan > div > img:hover, #laa01kanan02 > div > img:hover{
     scale: 1.2;
     translate: -1em 0em -1em;
-    transition: 0.5s ease-in-out;
 }
 
 .s4{

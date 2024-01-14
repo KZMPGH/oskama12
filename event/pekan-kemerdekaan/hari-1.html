@@ -9,7 +9,7 @@
     <title>OSKAMA 12 - Pekan Kemerdekaan</title>
     <link rel="icon" href="../../image/Logo OSKAMA putih.png">
     <link rel="stylesheet" href="../../overlay.css">
-    <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/index.css">
+    <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/hari-1.css">
 </head>
 <body>
 
@@ -49,6 +49,9 @@
         <div class="isi01">
             <div class="i01">
                 <h1>PEKAN KEMERDEKAAN</h1>
+                <h3>HARI KE-2</h3>
+            </div>
+            <div id="gallery">
             </div>
         </div>
     </div>
@@ -72,6 +75,30 @@
         </div>
     </footer>
 <!-- FOOTER -->
+
+
+<script>
+    // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
+    var images = [];
+
+    for (var i = 1; i <= 209; i++) {
+        images.push("image (" + i + ").jpg");
+    }
+
+    // Fungsi untuk menampilkan gambar
+    function displayImages() {
+        var container = document.getElementById("gallery");
+    
+        for(var i = 0; i < images.length; i++) {
+            var img = document.createElement("img");
+            img.src = "image/day 1/" + images[i]; // Ganti dengan path folder gambar Anda
+            container.appendChild(img);
+        }
+    }
+    
+    // Panggil fungsi saat halaman dimuat
+    window.onload = displayImages;
+</script>
 
 </body>
 </html>
