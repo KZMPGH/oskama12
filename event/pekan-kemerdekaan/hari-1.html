@@ -7,20 +7,36 @@
     <meta name="author" content="KZMP">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OSKAMA 12 - Pekan Kemerdekaan</title>
-    <link rel="icon" href="../../image/Logo OSKAMA putih.png">
+    <link rel="icon" href="../../image/Logo OSKAMA putih.svg">
     <link rel="stylesheet" href="../../overlay.css">
     <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/hari-1.css">
+    <script src="../../overlay.js"></script>
+    <script>
+        // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
+        var images = [];
+    
+        for (var i = 1; i <= 209; i++) {
+            images.push("image (" + i + ").JPG");
+        }
+    
+        // Fungsi untuk menampilkan gambar
+        function displayImages() {
+            var container = document.getElementById("gallery");
+        
+            for(var i = 0; i < images.length; i++) {
+                var img = document.createElement("img");
+                img.src = "../../image/acara/pekan kemerdekaan/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
+                container.appendChild(img);
+            }
+        }
+        
+        // Panggil fungsi saat halaman dimuat
+        window.onload = displayImages;
+    </script>
 </head>
 <body>
 
-<div class="header00">
-    <div>
-        <h1>OSKAMA 12</h1>
-    </div>
-    <div>
-        <h4>OSIS TARUNA TARUNI ANGKATAN 12</h4>
-    </div>
-</div>
+<div id="header00"></div>
 
 <!-- HEADER -->
     <header>
@@ -75,30 +91,6 @@
         </div>
     </footer>
 <!-- FOOTER -->
-
-
-<script>
-    // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
-    var images = [];
-
-    for (var i = 1; i <= 209; i++) {
-        images.push("image (" + i + ").JPG");
-    }
-
-    // Fungsi untuk menampilkan gambar
-    function displayImages() {
-        var container = document.getElementById("gallery");
-    
-        for(var i = 0; i < images.length; i++) {
-            var img = document.createElement("img");
-            img.src = "../../image/acara/pekan kemerdekaan/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
-            container.appendChild(img);
-        }
-    }
-    
-    // Panggil fungsi saat halaman dimuat
-    window.onload = displayImages;
-</script>
 
 </body>
 </html>
