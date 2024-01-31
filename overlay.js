@@ -1,4 +1,4 @@
-window.onload = function() {
+function overlay() {
     // O S K A M A  1 2
     // OSIS TARUNA TARUNI ANGKATAN 12
     document.getElementById("header00").innerHTML = 

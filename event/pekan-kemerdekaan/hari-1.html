@@ -11,53 +11,14 @@
     <link rel="stylesheet" href="../../overlay.css">
     <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/hari-1.css">
     <script src="../../overlay.js"></script>
-    <script>
-        // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
-        var images = [];
-    
-        for (var i = 1; i <= 209; i++) {
-            images.push("image (" + i + ").JPG");
-        }
-    
-        // Fungsi untuk menampilkan gambar
-        function displayImages() {
-            var container = document.getElementById("gallery");
-        
-            for(var i = 0; i < images.length; i++) {
-                var img = document.createElement("img");
-                img.src = "../../image/acara/pekan kemerdekaan/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
-                container.appendChild(img);
-            }
-        }
-        
-        // Panggil fungsi saat halaman dimuat
-        window.onload = displayImages;
-    </script>
 </head>
 <body>
+    
 
 <div id="header00"></div>
 
 <!-- HEADER -->
-    <header>
-        <div class="a01">
-            <div class="a02">
-                <div class="l01" id="beranda">
-                    <a href="https://kzmpgh.github.io/oskama12"><h4>BERANDA</h4></a>
-                </div>
-                <div class="l01" id="acara">
-                    <a href="https://kzmpgh.github.io/oskama12/event/"><h4>ACARA</h4></a>
-                </div>
-                <div class="l01" id="galeri">
-                    <a href="https://kzmpgh.github.io/oskama12/galeri/"><h4>GALERI</h4></a>
-                </div>             
-                <div class="l01" id="materi">
-                    <a href="https://kzmpgh.github.io/oskama12/materi/"><h4>MATERI</h4></a>
-                </div>
-                <div class="a03"></div>   
-            </div>
-        </div>
-    </header>
+    <header id="header"></header>
 <!-- HEADER -->
 
 <section>
@@ -74,23 +35,35 @@
 </section>
 
 <!-- FOOTER -->
-    <footer>
-        <div class="f01">
-            <div class="f02">
-                <h4>Kontak</h4>
-                <a href="https://api.whatsapp.com/send/?phone=6289696643899&text=Selamat%20pagi%2C+sebelumnya+mohon+maaf+menggangu+waktunya%20saya%20ingin..."><h5>Whatsapp</h5></a>
-                <a href="https://www.instagram.com/kenzena_/"><h5>Instragram</h5></a>
-            </div>
-            <div class="f03"></div>
-            <div class="bf01">
-                <h5>Website</h5>
-                <h3>OSKAMA 12 </h3>
-                <h5>dari</h5>
-                <a href="https://kzmpgh.github.io/KZMP/"><h5>KZMP</h5></a>
-            </div>
-        </div>
-    </footer>
+    <footer id="footer"></footer>
 <!-- FOOTER -->
+
+<script>
+    // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
+    var images = [];
+
+    for (var i = 1; i <= 209; i++) {
+        images.push("image (" + i + ").JPG");
+    }
+
+    // Fungsi untuk menampilkan gambar
+    function displayImages() {
+        var container = document.getElementById("gallery");
+    
+        for(var i = 0; i < images.length; i++) {
+            var img = document.createElement("img");
+            img.src = "../../image/acara/pekan kemerdekaan/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
+            container.appendChild(img);
+        }
+    }
+    
+    // Panggil fungsi saat halaman dimuat
+    window.onload = function(){
+        displayImages();
+        overlay()        
+    }
+
+</script>
 
 </body>
 </html>
