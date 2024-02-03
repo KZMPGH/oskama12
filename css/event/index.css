@@ -15,24 +15,26 @@
 }
 
 .isi01{
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
     color: white;
     max-width: 800px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 0.7em;
+    grid-gap: 1em;
 }
 
 .grid-item {
     color: #222222;
 	background-color: #F3EFE0;
     border-radius: 0.4em;
+    filter: drop-shadow(0.6em 0.6em 0.1em black);
 }
 
-.grid-item > div{
-    padding: 0.3em;
-    
+.grid-item > div > div{
+    padding-top: 0.3em;
+    align-items: center;
+    display: flex;
 }
 
 .grid-item img {
@@ -50,7 +52,7 @@
     display: flex;
     padding: 0em;
     margin: 0em;
-    margin-left: 0.7em;
+    margin-left: 0.6em;
     font-size: 70%;
 }
 

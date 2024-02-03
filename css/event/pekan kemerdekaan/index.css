@@ -31,24 +31,28 @@
 .hari-1{
     display: flex;
     color: black;
+    margin: 0.6em;
 }
 
 .hari-1 > div > img{
     width: 17em;
-    margin: 1em;
-    margin-left: 0.4em;
-    border: 0.7em solid #fff;
+    margin-right: 0.6em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    border: 0.47em solid #fff;
 }
 
 .hari-2{
     justify-content: right;
     color: white;
     display: flex;
+    margin: 0.6em;
 }
 
 .hari-2 > div > img{
     width: 17em;
-    margin: 1em;
-    margin-left: 0.4em;
-    border: 0.7em solid #fff;
+    margin-left: 0.6em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+    border: 0.47em solid #fff;
 }
