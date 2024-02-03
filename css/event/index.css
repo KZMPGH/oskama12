@@ -15,11 +15,13 @@
 }
 
 .isi01{
+    padding-left: 1em;
+    padding-right: 1em;
     color: white;
     max-width: 800px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2em;
+    grid-gap: 0.7em;
 }
 
 .grid-item {
@@ -29,12 +31,12 @@
 }
 
 .grid-item > div{
-    padding: 0.5em;
+    padding: 0.3em;
     
 }
 
 .grid-item img {
-    border-radius: 0.6em;
+    border-radius: 0.3em;
 	max-width: 100%;
 }
 
@@ -52,7 +54,7 @@
     font-size: 70%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
 
     .isi01{
         grid-template-columns: repeat(2, 1fr);
