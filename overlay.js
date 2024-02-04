@@ -22,9 +22,9 @@ function overlay() {
             '<div class="l01" id="galeri">'+
                 '<a href="https://kzmpgh.github.io/oskama12/galeri/"><h4>GALERI</h4></a>'+
             '</div>'+  
-            '<div class="l01" id="materi">'+
-                '<a href="https://kzmpgh.github.io/oskama12/materi/"><h4>MATERI</h4></a>'+
-            '</div>'+
+            // '<div class="l01" id="materi">'+
+            //     '<a href="https://kzmpgh.github.io/oskama12/materi/"><h4>MATERI</h4></a>'+
+            // '</div>'+
             '<div class="a03"></div>'+
         '</div>'+
     '</div>';
