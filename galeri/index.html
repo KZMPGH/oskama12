@@ -28,16 +28,11 @@
         function displayImageInCenter(imageSrc) {
             var overlay = document.createElement("div");
             overlay.id = "imageOverlay";
-            overlay.style.top = "0";
-            overlay.style.left = "0";
-            overlay.style.width = "100%";
-            overlay.style.height = "100%";
     
             var img = document.createElement("img");
             img.id = "imageClick"
             img.src = imageSrc;
-            img.style.maxWidth = "75%";
-            img.style.maxHeight = "75%";
+
     
             overlay.appendChild(img);
             document.body.appendChild(overlay);
