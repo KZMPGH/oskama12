@@ -6,11 +6,72 @@
     <meta name="keywords" content="oskama 12, osis skadama angkatan 12, website oskama 12, profil osis skadama 12, kegiatan osis skadama 12">
     <meta name="author" content="KZMP">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hari-1 - Pekan Kemerdekaan - OSKAMA 12</title>
-    <link rel="icon" href="../../image/Logo OSKAMA putih.svg">
-    <link rel="stylesheet" href="../../overlay.css">
-    <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/hari-1.css">
-    <script src="../../overlay.js"></script>
+    <title>Galeri - OSKAMA 12</title>
+    <link rel="icon" href="../image/Logo OSKAMA putih.svg">
+    <link rel="stylesheet" href="../overlay.css">
+    <link rel="stylesheet" href="../css//galeri/index.css">
+    <script src="../overlay.js"></script>
+    <script>
+        // Function to display the image when the page loads
+        window.onload = function() {
+            displayImages();
+            overlay();
+        }
+    
+        // List of image file names (you can manually populate this or use server-side scripting)
+        var files = [];
+        for (var i = 1; i <= 10; i++) {
+            files.push("files (" + i + ").JPG");
+        }
+    
+        // Function to display the clicked image in the center of the screen
+        function displayImageInCenter(imageSrc) {
+            var overlay = document.createElement("div");
+            overlay.id = "imageOverlay";
+            overlay.style.position = "fixed";
+            overlay.style.top = "0";
+            overlay.style.left = "0";
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+    
+            var img = document.createElement("img");
+            img.src = imageSrc;
+            img.style.maxWidth = "70%";
+            img.style.maxHeight = "70%";
+            img.style.borderRadius = "0.5em";
+            img.style.borderTop = "0.3em solid #F3EFE0"
+            img.style.borderLeft = "0.3em solid #F3EFE0"
+            img.style.borderRight = "0.3em solid #F3EFE0"
+            img.style.borderBottom = "4em solid #F3EFE0"
+    
+            overlay.appendChild(img);
+            document.body.appendChild(overlay);
+    
+            // Close the overlay when clicked
+            overlay.onclick = function() {
+                document.body.removeChild(overlay);
+            };
+        }
+    
+        // Function to display all images
+        function displayImages() {
+            var container = document.getElementById("gallery");
+    
+            // Reverse the order of images (from 10 to 1)
+            for (var i = files.length - 1; i >= 0; i--) {
+                var img = document.createElement("img");
+                img.src = "../image/galeri/" + files[i]; // Replace with your image folder path
+                img.onclick = function() {
+                    displayImageInCenter(this.src);
+                };
+                container.appendChild(img);
+            }
+        }
+    </script>
 </head>
 <body>
     
@@ -25,8 +86,7 @@
     <div class="s1">
         <div class="isi01">
             <div class="i01">
-                <h1>PEKAN KEMERDEKAAN</h1>
-                <h3>HARI KE-1</h3>
+                <h1>GALERI</h1>
             </div>
             <div id="gallery">
             </div>
@@ -37,31 +97,6 @@
 <!-- FOOTER -->
     <footer id="footer"></footer>
 <!-- FOOTER -->
-
-<script>
-// Panggil fungsi saat halaman dimuat
-window.onload = function(){
-    displayImages();
-    overlay()
-    }
-    // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
-    var images = [];
-
-    for (var i = 1; i <= 209; i++) {
-        images.push("image (" + i + ").JPG");
-    }
-
-    // Fungsi untuk menampilkan gambar
-    function displayImages() {
-        var container = document.getElementById("gallery");
-    
-        for(var i = 0; i < images.length; i++) {
-            var img = document.createElement("img");
-            img.src = "../../image/acara/pekan kemerdekaan/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
-            container.appendChild(img);
-        }
-    }
-</script>
 
 </body>
 </html>

@@ -1,0 +1,39 @@
+#acara{
+    /* background-color: #333; */
+    text-decoration: underline #FDC11F;
+    text-decoration-thickness: 0.2em;
+    color: #FDC11F;
+}
+
+.s1{
+    background-color: #434242;
+    justify-content: center;
+    display: flex;
+}
+
+.isi01{
+    color: white;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+}
+
+.i01{
+    border-bottom: 0.1em solid #3d3d3d;
+    text-align: center;
+}
+
+#gallery{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.2em;
+    padding: 0.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+#gallery img{
+    border-radius: 0.1em;
+    width: 100%;
+    transition: ease-out 0.2s;
+}
