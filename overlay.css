@@ -12,6 +12,17 @@ a{
     color: inherit;
 }
 
+#maintance{
+    background-color: #222222;
+}
+
+#maintance h2{
+    color: red;
+    padding: 0.5em;
+    margin: 0em;
+    text-align: center;
+}
+
 #header00{
     color: #FDC11F;
     text-align: center;

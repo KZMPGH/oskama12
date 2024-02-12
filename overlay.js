@@ -45,4 +45,7 @@ function overlay() {
             '<a href="https://kzmpgh.github.io/KZMP/"><h5>KZMP</h5></a>'+
         '</div>'+
     '</div>';
+
+    document.getElementById("maintance").innerHTML =
+    '<h2>Halaman Sedang Dalam Perbaikan!!...</h2>';
 }
