@@ -1,7 +1,7 @@
-#acara{
+#galeri{
     /* background-color: #333; */
     text-decoration: underline #FDC11F;
-    text-decoration-thickness: 0.2em;
+    text-decoration-thickness: 0.17em;
     color: #FDC11F;
 }
 
@@ -28,8 +28,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 0.2em;
     padding: 0.5em;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
 }
 
 #gallery img{

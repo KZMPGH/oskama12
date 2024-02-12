@@ -19,7 +19,7 @@ a{
 }
 
 #header00 h1{
-    letter-spacing: 0.2em;
+    letter-spacing: 0.16em;
     margin: 0em;
     padding-top: 0.4em;
     padding-bottom: 0.1em;
@@ -59,7 +59,7 @@ header{
 
 .l01 h4:hover{
     color: #FDC11F;
-    translate: 0em 0.2em;
+    translate: 0em 0.22em;
 }
 
 .a03{
