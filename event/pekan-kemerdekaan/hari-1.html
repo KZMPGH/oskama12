@@ -31,7 +31,7 @@
             var container = document.getElementById("gallery");
 
             // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
-            var batch = 9;
+            var batch = 15;
             var index = 0;
 
             function loadImages() {
@@ -58,7 +58,7 @@
                 index = end;
 
                 // Hentikan pemantauan saat semua gambar telah dimuat
-                if (index >= images.length) {
+                if (loadedImages === totalImage) {
                     window.removeEventListener('scroll', scrollHandler);
                 }
             }
