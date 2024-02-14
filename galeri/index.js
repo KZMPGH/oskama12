@@ -99,7 +99,7 @@ function video() {
             parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
         };
         var div = document.createElement("div")
-        div.id = "divImage";
+        div.id = "divVideo";
         container.appendChild(div);
         div.appendChild(video);
     }

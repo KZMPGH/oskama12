@@ -11,6 +11,73 @@
     <link rel="stylesheet" href="../../overlay.css">
     <link rel="stylesheet" href="../../css/event/pekan kemerdekaan/hari-1.css">
     <script src="../../overlay.js"></script>
+    <script>
+        // Memanggil fungsi untuk menampilkan gambar saat halaman dimuat
+        window.onload = function() {
+            displayImages();
+            overlay();
+        }
+        // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
+        var images = [];
+
+        for (var i = 1; i <= 173; i++) {
+            images.push("image (" + i + ").JPG");
+        }
+
+        // Fungsi untuk menampilkan gambar secara bertahap saat scrolling
+        function displayImages() {
+            var container = document.getElementById("gallery");
+
+            // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
+            var batch = 5;
+            var index = 0;
+
+            function loadImages() {
+                // Tentukan indeks gambar yang akan dimuat
+                var end = Math.min(index + batch, images.length);
+
+                // Muat gambar dalam batch saat halaman di-scroll
+                for (var i = index; i < end; i++) {
+                    var img = document.createElement("img");
+                    img.src = "../../image/acara/pekan kemerdekaan/hari-3/" + images[i]; // Ganti dengan path folder gambar Anda
+                    img.loading = "lazy"; // Tambahkan atribut loading="lazy"
+                    container.appendChild(img);
+                }
+
+                // Update indeks untuk batch berikutnya
+                index = end;
+
+                // Hentikan pemantauan saat semua gambar telah dimuat
+                if (index >= images.length) {
+                    window.removeEventListener('scroll', scrollHandler);
+                }
+            }
+
+            var jarakLayarDenganHalaman = 300
+
+            // Panggil loadImages saat halaman dimuat dan di-scroll
+            var scrollHandler = function () {
+                // Periksa apakah ketinggian halaman lebih besar dari tinggi layar
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - jarakLayarDenganHalaman) {
+                    loadImages();
+                }
+            };
+            
+            // Tambahkan event listener scroll
+            window.addEventListener('scroll', scrollHandler);
+
+            function checkHeightAndLoadImages() {
+                var windowHeight = window.innerHeight;
+                var bodyHeight = document.body.offsetHeight;
+
+                if (bodyHeight <= windowHeight + jarakLayarDenganHalaman) {
+                    loadImages();
+                    setTimeout(checkHeightAndLoadImages, 125);
+                }
+            }
+            checkHeightAndLoadImages();
+        }
+    </script>
 </head>
 <body>
 
@@ -36,33 +103,6 @@
 <!-- FOOTER -->
     <footer id="footer"></footer>
 <!-- FOOTER -->
-
-
-<script>
-    // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
-    var images = [];
-
-    for (var i = 1; i <= 173; i++) {
-        images.push("image (" + i + ").JPG");
-    }
-
-    // Fungsi untuk menampilkan gambar
-    function displayImages() {
-        var container = document.getElementById("gallery");
-    
-        for(var i = 0; i < images.length; i++) {
-            var img = document.createElement("img");
-            img.src = "../../image/acara/pekan kemerdekaan/hari-3/" + images[i]; // Ganti dengan path folder gambar Anda
-            container.appendChild(img);
-        }
-    }
-    
-    // Panggil fungsi saat halaman dimuat
-    window.onload = function(){
-        displayImages()
-        overlay()
-    }
-</script>
 
 </body>
 </html>

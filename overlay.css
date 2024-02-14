@@ -131,8 +131,9 @@ footer{
 /* Media query untuk perangkat dengan lebar maksimum 600px (misalnya, perangkat mobile) */
 @media only screen and (max-width: 600px) {
 
-    body{
+    body, button{
         font-size: 2.8vw;
     }
+    
 
 }

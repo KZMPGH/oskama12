@@ -59,6 +59,7 @@
     aspect-ratio: 1;
     width: 100%;
     height: 100%;
+    image-rendering: optimizeSpeed;
 }
 
 #gallery video{
@@ -68,6 +69,7 @@
     aspect-ratio: 1;
     width: 100%;
     height: 100%;
+    image-rendering: optimizeSpeed;
 }
 
 
@@ -101,8 +103,10 @@
     border-left: 0.3em solid #F3EFE0;
     border-right: 0.3em solid #F3EFE0;
     border-bottom: 4em solid #F3EFE0;
-    width: auto;
+    width: 100%;
     height: auto;
     max-width: 100%;
     max-height: 100%;
+    image-rendering: optimizeQuality;
 }
+
