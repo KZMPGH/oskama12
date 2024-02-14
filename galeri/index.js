@@ -62,6 +62,7 @@ function foto() {
         var img = document.createElement("img");
         img.src = "../image/galeri/foto/" + files[i] + "jpg"; // Removed the "JPG" extension here
         img.alt = "- Error 303";;
+        img.loading = "lazy"
         img.onclick = function() {
             displayImageInCenter(this.src);
         };
