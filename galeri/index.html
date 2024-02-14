@@ -11,52 +11,13 @@
     <link rel="stylesheet" href="../overlay.css">
     <link rel="stylesheet" href="../css//galeri/index.css">
     <script src="../overlay.js"></script>
+    <script src="index.js"></script>
+    <script></script>
     <script>
         // Function to display the image when the page loads
         window.onload = function() {
             displayImages();
             overlay();
-        }
-    
-        // List of image file names (you can manually populate this or use server-side scripting)
-        var files = [];
-        for (var i = 1; i <= 17; i++) {
-            files.push("files (" + i + ").JPG");
-        }
-    
-        // Function to display the clicked image in the center of the screen
-        function displayImageInCenter(imageSrc) {
-            var overlay = document.createElement("div");
-            overlay.id = "imageOverlay";
-    
-            var img = document.createElement("img");
-            img.id = "imageClick"
-            img.src = imageSrc;
-
-    
-            overlay.appendChild(img);
-            document.body.appendChild(overlay);
-    
-            // Close the overlay when clicked
-            overlay.onclick = function() {
-                document.body.removeChild(overlay);
-            };
-        }
-    
-        // Function to display all images
-        function displayImages() {
-            var container = document.getElementById("gallery");
-    
-            // Reverse the order of images (from 10 to 1)
-            for (var i = files.length - 1; i >= 0; i--) {
-                var img = document.createElement("img");
-                img.src = "../image/galeri/" + files[i]; // Replace with your image folder path
-                img.alt = "- Error 303"
-                img.onclick = function() {
-                    displayImageInCenter(this.src);
-                };
-                container.appendChild(img);
-            }
         }
     </script>
 </head>
