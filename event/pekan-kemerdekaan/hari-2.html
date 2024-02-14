@@ -29,7 +29,7 @@
             var container = document.getElementById("gallery");
 
             // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
-            var batch = 5;
+            var batch = 3;
             var index = 0;
 
             function loadImages() {
@@ -53,7 +53,7 @@
                 }
             }
 
-            var jarakLayarDenganHalaman = 100;
+            var jarakLayarDenganHalaman = window.innerHeight * 0.1
 
             // Panggil loadImages saat halaman dimuat dan di-scroll
             var scrollHandler = function () {
