@@ -19,6 +19,8 @@
         }
         // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
         var images = [];
+        var totalImage = images.length
+        var loadedImages = 0
 
         for (var i = 1; i <= 114; i++) {
             images.push("image (" + i + ").JPG");
@@ -29,19 +31,27 @@
             var container = document.getElementById("gallery");
 
             // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
-            var batch = 3;
+            var batch = 9;
             var index = 0;
 
             function loadImages() {
                 // Tentukan indeks gambar yang akan dimuat
-                var end = Math.min(index + batch, images.length);
+                end = Math.min(index + batch, images.length);
 
                 // Muat gambar dalam batch saat halaman di-scroll
                 for (var i = index; i < end; i++) {
                     var img = document.createElement("img");
                     img.src = "../../image/acara/pekan kemerdekaan/hari-2/" + images[i]; // Ganti dengan path folder gambar Anda
                     img.loading = "lazy"; // Tambahkan atribut loading="lazy"
+                    totalImage++;
                     container.appendChild(img);
+                    img.addEventListener("load", function(){
+                        loadedImages++;
+                        console.log(loadedImages)
+                        if (loadedImages === totalImage){
+                            checkHeightAndLoadImages();
+                        }
+                    })
                 }
 
                 // Update indeks untuk batch berikutnya
@@ -53,26 +63,30 @@
                 }
             }
 
-            var jarakLayarDenganHalaman = window.innerHeight * 0.1
+            jarakLayarDenganHalaman = window.innerHeight * 0.5
 
             // Panggil loadImages saat halaman dimuat dan di-scroll
             var scrollHandler = function () {
                 // Periksa apakah ketinggian halaman lebih besar dari tinggi layar
-                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - jarakLayarDenganHalaman) {
-                    loadImages();
+                if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - jarakLayarDenganHalaman)) {
+                    if (loadedImages === totalImage){
+                        loadImages();
+                    }
                 }
             };
             
             // Tambahkan event listener scroll
-            window.addEventListener('scroll', scrollHandler);
+            window.addEventListener("scrollend", scrollHandler);
+            window.addEventListener("scroll", scrollHandler);
 
             function checkHeightAndLoadImages() {
                 var windowHeight = window.innerHeight;
-                var bodyHeight = document.body.offsetHeight;
+                var bodyHeight = document.body.offsetHeight - jarakLayarDenganHalaman;
 
-                if (bodyHeight <= windowHeight + jarakLayarDenganHalaman) {
-                    loadImages();
-                    setTimeout(checkHeightAndLoadImages, 125);
+                if (bodyHeight <= windowHeight) {
+                    if (loadedImages === totalImage){
+                        loadImages();
+                    }
                 }
             }
             checkHeightAndLoadImages();
