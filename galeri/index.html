@@ -16,7 +16,7 @@
     <script>
         // Function to display the image when the page loads
         window.onload = function() {
-            displayImages();
+            foto();
             overlay();
         }
     </script>
@@ -36,6 +36,16 @@
         <div class="isi01">
             <div class="i01">
                 <h1>GALERI</h1>
+            </div>
+            <div class="i02">
+                <div>
+                    <button onclick="foto()">
+                        <h4>FOTO</h4>
+                    </button>
+                    <button onclick="video()">
+                        <h4>VIDEO</h4>
+                    </button>                   
+                </div>
             </div>
             <div id="gallery">
             </div>

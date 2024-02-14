@@ -49,36 +49,58 @@ function displayVideoInCenter(imageSrc) {
 }
     
 // Function to display all images
-function displayImages() {
+function foto() {
     var container = document.getElementById("gallery");
+
+    // Hapus semua div yang ada
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
     
     // Reverse the order of images (from 10 to 1)
     for (var i = files.length - 1; i >= 0; i--) {
         var img = document.createElement("img");
-        img.src = "../image/galeri/" + files[i] + "jpg"; // Removed the "JPG" extension here
-        img.alt = "- Error 303";
-        img.onerror = function() {
-            // Remove the image if it fails to load (file not found)
-            this.parentNode.removeChild(this);
-        };
+        img.src = "../image/galeri/foto/" + files[i] + "jpg"; // Removed the "JPG" extension here
+        img.alt = "- Error 303";;
         img.onclick = function() {
             displayImageInCenter(this.src);
         };
-        container.appendChild(img);
-
-        var video = document.createElement("video");
-        video.src = "../image/galeri/" + files[i] + "mp4"; // Removed the "JPG" extension here
-        video.alt = "- Error 303";
-        video.onerror = function() {
+        img.onerror = function() {
             // Remove the image if it fails to load (file not found)
-            this.parentNode.removeChild(this);
+            var parentDiv = this.parentNode;
+            parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
         };
+        var div = document.createElement("div")
+        div.id = "divImage";
+        container.appendChild(div);
+        div.appendChild(img);
+    }
+}
+
+function video() {
+    var container = document.getElementById("gallery");
+
+    // Hapus semua div yang ada
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    
+    // Reverse the order of images (from 10 to 1)
+    for (var i = files.length - 1; i >= 0; i--) {
+        var video = document.createElement("video");
+        video.src = "../image/galeri/video/" + files[i] + "mp4"; // Removed the "JPG" extension here
+        video.alt = "- Error 303";;
         video.onclick = function() {
             displayVideoInCenter(this.src);
         };
-        var overlay = document.createElement("img");
-        overlay.id = "playButton";
-        overlay.src = "../image/galeri/aset/play.png";
-        container.appendChild(video);
+        video.onerror = function() {
+            // Remove the image if it fails to load (file not found)
+            var parentDiv = this.parentNode;
+            parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
+        };
+        var div = document.createElement("div")
+        div.id = "divImage";
+        container.appendChild(div);
+        div.appendChild(video);
     }
 }
