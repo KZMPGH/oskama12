@@ -1,6 +1,6 @@
 // List of image file names (you can manually populate this or use server-side scripting)
 var files = [];
-for (var i = 1; i <= 30; i++) {
+for (var i = 1; i <= 40; i++) {
     files.push("files (" + i + ").");
 }
     
