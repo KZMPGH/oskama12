@@ -105,8 +105,8 @@
     border-bottom: 4em solid #F3EFE0;
     width: 100%;
     height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%;
+    max-height: 80%;
     image-rendering: optimizeQuality;
 }
 
