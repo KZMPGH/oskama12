@@ -90,10 +90,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: auto;
-    height: auto;
-    max-width: 50%;
-    max-height: 50%;
+    width: 70%;
+    height: 70%;
+    max-width: 700px;
+    max-height: 700px;
 }
 
 #imageClick{
@@ -103,8 +103,12 @@
     border-left: 0.3em solid #F3EFE0;
     border-right: 0.3em solid #F3EFE0;
     border-bottom: 4em solid #F3EFE0;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    min-width: 80%; /* Set minimum width 50% dari lebar viewport */
+    object-fit: contain;
     image-rendering: optimizeQuality;
 }
 
