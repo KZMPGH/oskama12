@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Website oskama 12 adalah website resmi dari organisasi siswa intra sekolah (osis) skadama angkatan 12. Website ini bertujuan untuk memperkenalkan osis skadama angkatan 12 kepada masyarakat, khususnya siswa-siswi skadama dan alumni. Di website ini, Anda bisa mengetahui sejarah, visi, misi, struktur, dan program kerja osis skadama angkatan 12. Anda juga bisa melihat profil dan prestasi dari anggota inti dan anggota osis skadama angkatan 12. Selain itu, website ini juga menyajikan berita, informasi, dan kegiatan yang terkait dengan osis skadama angkatan 12. Website oskama 12 adalah website yang informatif, interaktif, dan inspiratif bagi para pengunjungnya.">
+    <meta name="keywords" content="oskama 12, osis skadama angkatan 12, website oskama 12, profil osis skadama 12, kegiatan osis skadama 12">
+    <meta name="author" content="KZMP">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LDK OSIS 23-24 - OSKAMA 12</title>
+    <link rel="icon" href="../../image/Logo OSKAMA putih.svg">
+    <link rel="stylesheet" href="../../overlay.css">
+    <link rel="stylesheet" href="../../css/event/default/galeriAcara.css">
+    <script src="../../overlay.js"></script>
+    <script>
+        // Memanggil fungsi untuk menampilkan gambar saat halaman dimuat
+        window.onload = function() {
+            displayImages();
+            overlay();
+        }
+        // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
+        var images = [];
+        var totalImage = images.length
+        var loadedImages = 0
+
+        for (var i = 1; i <= 600; i++) {
+            images.push("images (" + i + ").JPG");
+        }
+
+        function displayImageInCenter(imageSrc) {
+            var overlay = document.createElement("div");
+            overlay.id = "imageOverlay";
+            
+            var img = document.createElement("img");
+            img.id = "imageClick";
+            img.src = imageSrc;
+
+            var overlay2 = document.createElement("div");
+            overlay2.id = "imageOverlay2";
+            
+            overlay.appendChild(overlay2);
+            overlay2.appendChild(img);
+            document.body.appendChild(overlay);
+            
+            // Close the overlay when clicked
+            overlay.onclick = function() {
+                document.body.removeChild(overlay);
+            };
+        }
+
+        // Fungsi untuk menampilkan gambar secara bertahap saat scrolling
+        function displayImages() {
+            var container = document.getElementById("gallery");
+
+            while (container.firstChild) {
+            container.removeChild(container.firstChild);
+            }
+
+            // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
+            var batch = 15;
+            var index = 0;
+
+            function loadImages() {
+                // Tentukan indeks gambar yang akan dimuat
+                end = Math.min(index + batch, images.length);
+
+                // Muat gambar dalam batch saat halaman di-scroll
+                for (var i = index; i < end; i++) {
+                    var img = document.createElement("img");
+                    img.src = "../../image/acara/ldk-osis-23-24/" + images[i]; // Ganti dengan path folder gambar Anda
+                    img.loading = "lazy"; // Tambahkan atribut loading="lazy"
+                    img.alt = "- Error 303";
+                    img.onclick = function() {
+                        displayImageInCenter(this.src);
+                    };
+                    img.onerror = function() {
+                        // Remove the image if it fails to load (file not found)
+                        var parentDiv = this.parentNode;
+                        parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
+                    };
+                    var div = document.createElement("div")
+                    div.id = "divImage";
+                    totalImage++;
+                    container.appendChild(div);
+                    div.appendChild(img);
+                    img.addEventListener("load", function(){
+                        loadedImages++;
+                        console.log(loadedImages)
+                        if (loadedImages === totalImage){
+                            checkHeightAndLoadImages();
+                        }
+                    })
+                }
+
+                // Update indeks untuk batch berikutnya
+                index = end;
+
+                // Hentikan pemantauan saat semua gambar telah dimuat
+                if (loadedImages === totalImage) {
+                    window.removeEventListener('scroll', scrollHandler);
+                }
+            }
+
+            jarakLayarDenganHalaman = window.innerHeight * 0.5
+
+            // Panggil loadImages saat halaman dimuat dan di-scroll
+            var scrollHandler = function () {
+                // Periksa apakah ketinggian halaman lebih besar dari tinggi layar
+                if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - jarakLayarDenganHalaman)) {
+                    if (loadedImages === totalImage){
+                        loadImages();
+                    }
+                }
+            };
+            
+            // Tambahkan event listener scroll
+            window.addEventListener("scrollend", scrollHandler);
+            window.addEventListener("scroll", scrollHandler);
+
+            function checkHeightAndLoadImages() {
+                var windowHeight = window.innerHeight;
+                var bodyHeight = document.body.offsetHeight - jarakLayarDenganHalaman;
+
+                if (bodyHeight <= windowHeight) {
+                    if (loadedImages === totalImage){
+                        loadImages();
+                    }
+                }
+            }
+            checkHeightAndLoadImages();
+        }
+    </script>
+</head>
+<body>
+    
+
+<div id="header00"></div>
+
+<!-- HEADER -->
+    <header id="header"></header>
+<!-- HEADER -->
+
+<section>
+    <div class="s1">
+        <div class="isi01">
+            <div class="i01">
+                <h1>LDK OSIS 23-24</h1>
+            </div>
+            <div id="gallery">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+    <footer id="footer"></footer>
+<!-- FOOTER -->
+
+</body>
+</html>
