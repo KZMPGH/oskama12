@@ -48,4 +48,5 @@ function overlay() {
 
     document.getElementById("maintance").innerHTML =
     '<h2>Halaman Sedang Dalam Perbaikan!!...</h2>';
+
 }
