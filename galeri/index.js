@@ -3,8 +3,8 @@ var images = [];
 var totalImage = images.length
 var loadedImages = 0
 
-for (var i = 1; i <= 223; i++) {
-    images.push("image (" + i + ").JPG");
+for (var i = 1; i <= 30; i++) {
+    images.push("image (" + i + ").jpg");
 }
 
 function displayImageInCenter(imageSrc) {
@@ -41,6 +41,10 @@ function foto() {
         container.removeChild(container.firstChild);
     }
 
+    // Reset totalImage dan loadedImages
+    totalImage = 0;
+    loadedImages = 0;
+
     // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
     var batch = 15;
     var index = 0;
@@ -52,7 +56,7 @@ function foto() {
         // Muat gambar dalam batch saat halaman di-scroll
         for (var i = index; i < end; i++) {
             var img = document.createElement("img");
-            img.src = "../../image/acara/ldk-taruna-24/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
+            img.src = "../../image/galeri/foto/" + images[i]; // Ganti dengan path folder gambar Anda
             img.loading = "lazy"; // Tambahkan atribut loading="lazy"
             img.alt = "- Error 303";
             img.onclick = function() {
@@ -122,144 +126,137 @@ function foto() {
     checkHeightAndLoadImages();
 }
 
-function video() {
-    var container = document.getElementById("gallery");
+// FUNCTION VIDEO
 
-    // Hapus semua div yang ada
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
+// Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
+var files = [];
+var totalFile = files.length
+var loadedFiles = 0
+
+for (var i = 1; i <= 20; i++) {
+    files.push("files (" + i + ").jpg");
+}
+
+function displayFileInCenter(fileSrc) {
+    // Mengekstrak folder tujuan dari fileSrc
+    var lastIndex = fileSrc.lastIndexOf('/');
+    var folderDestination = fileSrc.substring(0, lastIndex + 1) + "full video/"; // Folder tujuan baru
+
+    var overlay = document.createElement("div");
+    overlay.id = "imageOverlay";
     
-    // Reverse the order of images (from 10 to 1)
-    for (var i = files.length - 1; i >= 0; i--) {
-        var video = document.createElement("video");
-        video.src = "../image/galeri/video/" + files[i] + "mp4"; // Removed the "JPG" extension here
-        video.alt = "- Error 303";;
-        video.onclick = function() {
-            displayVideoInCenter(this.src);
-        };
-        video.onerror = function() {
-            // Remove the image if it fails to load (file not found)
-            var parentDiv = this.parentNode;
-            parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
-        };
-        var div = document.createElement("div")
-        div.id = "divVideo";
-        container.appendChild(div);
-        div.appendChild(video);
-    }
+    var video = document.createElement("video");
+    video.id = "imageClick";
+    // Mengganti ekstensi file dari jpg ke mp4
+    video.src = folderDestination + fileSrc.substring(lastIndex + 1).replace('.jpg', '.mp4');
+    // Mengatur properti video
+    video.controls = true; // Menampilkan kontrol video
+    video.autoplay = true; // Otomatis memulai video ketika dimuat
+    video.loop = true; // Mengulang video
+    var overlay2 = document.createElement("div");
+    overlay2.id = "imageOverlay2";
+    overlay.appendChild(overlay2);
+    overlay2.appendChild(video);
+    // Menambahkan overlay ke body
+    document.body.appendChild(overlay);
+    
+    // Close the overlay when clicked
+    overlay.onclick = function() {
+        document.body.removeChild(overlay);
+    };
 }
 
 
 
-// Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
-// var images = [];
-// var totalImage = images.length
-// var loadedImages = 0
+// Fungsi untuk menampilkan gambar secara bertahap saat scrolling
+function video() {
+    var container = document.getElementById("gallery");
 
-// for (var i = 1; i <= 209; i++) {
-//     images.push("image (" + i + ").JPG");
-// }
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
 
-// function displayImageInCenter(imageSrc) {
-//     var overlay = document.createElement("div");
-//     overlay.id = "imageOverlay";
+    // Reset totalImage dan loadedImages
+    totalFile = 0;
+    loadedFiles = 0;
+
+    // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
+    var batch = 15;
+    var index = 0;
+
+    function loadFiles() {
+        // Tentukan indeks gambar yang akan dimuat
+        end = Math.min(index + batch, files.length);
+
+        // Muat gambar dalam batch saat halaman di-scroll
+        for (var i = end - 1; i >= index; i--) {
+            var img = document.createElement("img");
+            img.src = "../../image/galeri/video/" + files[i]; // Ganti dengan path folder gambar Anda
+            img.loading = "lazy"; // Tambahkan atribut loading="lazy"
+            img.alt = "- Error 303";
+            img.onclick = function() {
+                displayFileInCenter(this.src);
+            };
+            img.onerror = function() {
+                // Remove the image if it fails to load (file not found)
+                var parentDiv = this.parentNode;
+                parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
+            };
+            var div = document.createElement("div")
+            div.id = "divImage";
+            totalImage++;
+            container.appendChild(div);
+            div.appendChild(img);
+            img.addEventListener("load", function(){
+                loadedFiles++;
+                console.log(loadedFiles)
+                if (loadedFiles === totalFile){
+                    checkHeightAndLoadFiles();
+                }
+            })
+        }
+
+        // Update indeks untuk batch berikutnya
+        index = end;
+
+        // Hentikan pemantauan saat semua gambar telah dimuat
+        if (loadedFiles === totalFile) {
+            window.removeEventListener('scroll', scrollHandler);
+        }
+    }
+
+    jarakLayarDenganHalaman = window.innerHeight * 1
+
+    // Panggil loadImages saat halaman dimuat dan di-scroll
+    var scrollHandler = function () {
+        // Periksa apakah ketinggian halaman lebih besar dari tinggi layar
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - jarakLayarDenganHalaman)) {
+            if (loadedFiles === totalFile){
+                loadFiles();
+            }
+        }
+    };
     
-//     var img = document.createElement("img");
-//     img.id = "imageClick";
-//     img.src = imageSrc;
+    // Tambahkan event listener scroll
+    window.addEventListener("scroll", scrollHandler);
 
-//     var overlay2 = document.createElement("div");
-//     overlay2.id = "imageOverlay2";
-    
-//     overlay.appendChild(overlay2);
-//     overlay2.appendChild(img);
-//     document.body.appendChild(overlay);
-    
-//     // Close the overlay when clicked
-//     overlay.onclick = function() {
-//         document.body.removeChild(overlay);
-//     };
-// }
+    // Mendefinisikan fungsi untuk memanggil scrollHandler setiap 2 detik sekali
+    function callScrollHandlerPeriodically() {
+        setInterval(scrollHandler, 1000);
+    }
 
-// // Fungsi untuk menampilkan gambar secara bertahap saat scrolling
-// function displayImages() {
-//     var container = document.getElementById("gallery");
+    // Panggil fungsi untuk memulai pemanggilan scrollHandler secara periodik
+    callScrollHandlerPeriodically();
 
-//     while (container.firstChild) {
-//     container.removeChild(container.firstChild);
-//     }
+    function checkHeightAndLoadFiles() {
+        var windowHeight = window.innerHeight;
+        var bodyHeight = document.body.offsetHeight - jarakLayarDenganHalaman;
 
-//     // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
-//     var batch = 15;
-//     var index = 0;
-
-//     function loadImages() {
-//         // Tentukan indeks gambar yang akan dimuat
-//         end = Math.min(index + batch, images.length);
-
-//         // Muat gambar dalam batch saat halaman di-scroll
-//         for (var i = index; i < end; i++) {
-//             var img = document.createElement("img");
-//             img.src = "../../image/acara/pekan kemerdekaan/hari-1/" + images[i]; // Ganti dengan path folder gambar Anda
-//             img.loading = "lazy"; // Tambahkan atribut loading="lazy"
-//             img.alt = "- Error 303";
-//             img.onclick = function() {
-//                 displayImageInCenter(this.src);
-//             };
-//             img.onerror = function() {
-//                 // Remove the image if it fails to load (file not found)
-//                 var parentDiv = this.parentNode;
-//                 parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
-//             };
-//             var div = document.createElement("div")
-//             div.id = "divImage";
-//             totalImage++;
-//             container.appendChild(div);
-//             div.appendChild(img);
-//             img.addEventListener("load", function(){
-//                 loadedImages++;
-//                 console.log(loadedImages)
-//                 if (loadedImages === totalImage){
-//                     checkHeightAndLoadImages();
-//                 }
-//             })
-//         }
-
-//         // Update indeks untuk batch berikutnya
-//         index = end;
-
-//         // Hentikan pemantauan saat semua gambar telah dimuat
-//         if (loadedImages === totalImage) {
-//             window.removeEventListener('scroll', scrollHandler);
-//         }
-//     }
-
-//     jarakLayarDenganHalaman = window.innerHeight * 0.5
-
-//     // Panggil loadImages saat halaman dimuat dan di-scroll
-//     var scrollHandler = function () {
-//         // Periksa apakah ketinggian halaman lebih besar dari tinggi layar
-//         if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - jarakLayarDenganHalaman)) {
-//             if (loadedImages === totalImage){
-//                 loadImages();
-//             }
-//         }
-//     };
-    
-//     // Tambahkan event listener scroll
-//     window.addEventListener("scrollend", scrollHandler);
-//     window.addEventListener("scroll", scrollHandler);
-
-//     function checkHeightAndLoadImages() {
-//         var windowHeight = window.innerHeight;
-//         var bodyHeight = document.body.offsetHeight - jarakLayarDenganHalaman;
-
-//         if (bodyHeight <= windowHeight) {
-//             if (loadedImages === totalImage){
-//                 loadImages();
-//             }
-//         }
-//     }
-//     checkHeightAndLoadImages();
-// }
+        if (bodyHeight <= windowHeight) {
+            if (loadedFiles === totalFile){
+                loadFiles();
+            }
+        }
+    }
+    checkHeightAndLoadFiles();
+}
