@@ -201,7 +201,7 @@ function video() {
         // Muat gambar dalam batch saat halaman di-scroll
         for (var i = index; i > end; i--) {
             var img = document.createElement("img");
-            img.src = "../../image/galeri/video/" + files[i]; // Ganti dengan path folder gambar Anda
+            img.src = "../image/galeri/video/" + files[i]; // Ganti dengan path folder gambar Anda
             img.loading = "lazy"; // Tambahkan atribut loading="lazy"
             img.alt = "- Error 303";
             img.onclick = function() {
