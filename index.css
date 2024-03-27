@@ -147,7 +147,7 @@
     height: 1.7em;
 }
 
-#laa01kanan > span > .ig img{
+#laa01kanan > span > .ig img, #laa01kanan02 > span > .ig img{
     filter: invert(100%);
 }
 
