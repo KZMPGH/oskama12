@@ -42,7 +42,7 @@ function overlay() {
             '<h5>Website</h5>'+
             '<h3>OSKAMA 12 </h3>'+
             '<h5>dari</h5>'+
-            '<a href="https://kzmpgh.github.io/KZMP/"><h5>KZMP</h5></a>'+
+            '<a href="https://www.instagram.com/kenzena_/"><h5>OSIS SKADAMA Angkatan 12</h5></a>'+
         '</div>'+
     '</div>';
 
