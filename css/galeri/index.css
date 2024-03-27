@@ -23,6 +23,23 @@
     text-align: center;
 }
 
+.i01 > h1{
+    padding: 0em;
+    margin: 0.5em;
+}
+
+.i01 > div{
+    display: flex;
+    justify-content: center;
+    margin: 0.5em;
+}
+
+.i01 > div > h5{
+    margin: 0em;
+    width: 60%;
+    text-align: center;
+}
+
 .i02{
     display: flex;
     justify-content: center;
@@ -91,8 +108,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70%;
-    height: 70%;
+    width: 83%;
+    height: 83%;
     max-width: 700px;
     max-height: 700px;
 }
@@ -108,7 +125,7 @@
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    min-width: 80%; /* Set minimum width 50% dari lebar viewport */
+    min-width: 10%; /* Set minimum width 50% dari lebar viewport */
     object-fit: contain;
     image-rendering: optimizeQuality;
 }
