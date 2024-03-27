@@ -63,9 +63,6 @@ function foto() {
         for (var i = index; i > end; i--) { // Menghitung dari angka tertinggi ke terendah
             var img = document.createElement("img");
             img.src = "../image/galeri/foto/" + images[i]; // Ganti dengan path folder gambar Anda
-            console.log("I : " + i)
-            console.log("END : " + end)
-            console.log("index : " + index)
             img.loading = "lazy"; // Tambahkan atribut loading="lazy"
             img.alt = "- Error 303";
             img.onclick = function() {
