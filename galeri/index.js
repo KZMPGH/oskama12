@@ -1,9 +1,14 @@
+jumlahFoto = 29;
+jumlahVideo = 7;
+
+
+
 // Daftar gambar Anda (Anda perlu mengisi ini secara manual atau menggunakan server-side script)
 var images = [];
 var totalImage = images.length
 var loadedImages = 0
 
-for (var i = 1; i <= 30; i++) {
+for (var i = 1; i <= jumlahFoto; i++) {
     images.push("image (" + i + ").jpg");
 }
 
@@ -44,19 +49,23 @@ function foto() {
     // Reset totalImage dan loadedImages
     totalImage = 0;
     loadedImages = 0;
+    end = 0;
 
     // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
     var batch = 15;
-    var index = 0;
+    var index = images.length;
 
     function loadImages() {
         // Tentukan indeks gambar yang akan dimuat
-        end = Math.min(index + batch, images.length);
+        end = Math.max(index - batch, -1); // Menghitung dari angka tertinggi ke terendah
 
         // Muat gambar dalam batch saat halaman di-scroll
-        for (var i = index; i < end; i++) {
+        for (var i = index; i > end; i--) { // Menghitung dari angka tertinggi ke terendah
             var img = document.createElement("img");
             img.src = "../image/galeri/foto/" + images[i]; // Ganti dengan path folder gambar Anda
+            console.log("I : " + i)
+            console.log("END : " + end)
+            console.log("index : " + index)
             img.loading = "lazy"; // Tambahkan atribut loading="lazy"
             img.alt = "- Error 303";
             img.onclick = function() {
@@ -64,6 +73,7 @@ function foto() {
             };
             img.onerror = function() {
                 // Remove the image if it fails to load (file not found)
+                totalImage--;
                 var parentDiv = this.parentNode;
                 parentDiv.parentNode.removeChild(parentDiv); // Remove the parent div
             };
@@ -74,7 +84,6 @@ function foto() {
             div.appendChild(img);
             img.addEventListener("load", function(){
                 loadedImages++;
-                console.log(loadedImages)
                 if (loadedImages === totalImage){
                     checkHeightAndLoadImages();
                 }
@@ -133,7 +142,7 @@ var files = [];
 var totalFile = files.length
 var loadedFiles = 0
 
-for (var i = 1; i <= 20; i++) {
+for (var i = 1; i <= jumlahVideo; i++) {
     files.push("files (" + i + ").jpg");
 }
 
@@ -179,17 +188,18 @@ function video() {
     // Reset totalImage dan loadedImages
     totalFile = 0;
     loadedFiles = 0;
+    end = 0;
 
     // Buat variabel untuk menentukan jumlah gambar yang ditampilkan setiap kali
     var batch = 15;
-    var index = 0;
+    var index = files.length;
 
     function loadFiles() {
         // Tentukan indeks gambar yang akan dimuat
-        end = Math.min(index + batch, files.length);
+        end = Math.max(index - batch, -1); // Menghitung dari angka tertinggi ke terendah
 
         // Muat gambar dalam batch saat halaman di-scroll
-        for (var i = end - 1; i >= index; i--) {
+        for (var i = index; i > end; i--) {
             var img = document.createElement("img");
             img.src = "../../image/galeri/video/" + files[i]; // Ganti dengan path folder gambar Anda
             img.loading = "lazy"; // Tambahkan atribut loading="lazy"
