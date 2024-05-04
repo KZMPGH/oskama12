@@ -1,5 +1,5 @@
-jumlahFoto = 125;
-jumlahVideo = 12;
+jumlahFoto = 150;
+jumlahVideo = 15;
 
 
 
