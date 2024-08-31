@@ -59,6 +59,30 @@
     font-size: 70%;
 }
 
+
+/* Animasi */
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: -800px 0
+    }
+    100% {
+      background-position: 800px 0
+    }
+  }
+  
+.grid-item img {
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #333333 8%, #303030 18%, #333333 33%);
+    background-size: 800px 104px;
+    position: relative;
+  }
+
+
 @media only screen and (max-width: 700px) {
 
     .isi01{

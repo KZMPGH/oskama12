@@ -143,3 +143,25 @@
     display: inline-flex;
     align-items: center;
 }
+
+/* Animasi Load */
+@keyframes placeHolderShimmer {
+    0% {
+      background-position: -800px 0
+    }
+    100% {
+      background-position: 800px 0
+    }
+  }
+  
+  #gallery img, #gallery video{
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #333333 8%, #303030 18%, #333333 33%);
+    background-size: 800px 104px;
+    position: relative;
+  }
